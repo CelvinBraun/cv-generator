@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cover Letter</title>
+<link rel="stylesheet" href="../../styles/shared.css">
+<link rel="stylesheet" href="../../styles/letter.css">
+</head>
+<body>
+<div class="toolbar"><button id="printBtn" onclick="window.print()">Print / Save as PDF</button></div>
+<main class="sheet" id="app"></main>
+
+<!-- config.js sets APP_CONFIG.lang, which decides which base.<lang>.js loads below. -->
+<script src="config.js"></script>
+<script src="letter.js"></script>
+<script src="../../render/loader.js"></script>
+<script>
+  const lang = APP_CONFIG.lang || "en";
+  loadScriptsInOrder(
+    ["../../data/base." + lang + ".js", "../../render/labels.js", "../../render/render.js"],
+    function () { renderLetter(); }
+  );
+</script>
+</body>
+</html>
