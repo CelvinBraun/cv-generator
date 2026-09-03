@@ -13,7 +13,9 @@
     "Yu Gothic", Meiryo, Helvetica, Arial, sans-serif;
 
   --page-width: 210mm;
-  --page-margin: 18mm 20mm;
+  --page-margin-v: 18mm;
+  --page-margin-h: 20mm;
+  --page-margin: var(--page-margin-v) var(--page-margin-h);
 }
 
 * {
@@ -33,6 +35,7 @@ body {
 }
 
 .sheet {
+  position: relative;
   background: var(--paper);
   width: var(--page-width);
   max-width: 100%;
@@ -46,6 +49,7 @@ body {
   top: 0;
   display: flex;
   justify-content: center;
+  gap: 8px;
   padding: 12px;
   background: var(--canvas);
   z-index: 10;
@@ -66,6 +70,12 @@ body {
 
 .toolbar button:hover {
   opacity: 0.9;
+}
+
+.toolbar button.secondary {
+  background: transparent;
+  color: var(--ink-soft);
+  border: 1px solid var(--line);
 }
 
 @page {

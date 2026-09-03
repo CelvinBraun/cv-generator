@@ -160,7 +160,8 @@ section.block:last-child {
 }
 
 .languages-row,
-.certifications-row {
+.certifications-row,
+.mobility-row {
   display: flex;
   flex-wrap: wrap;
   gap: 4px 18px;
@@ -180,6 +181,136 @@ section.block:last-child {
   text-decoration: none;
 }
 
+/* =========================================================
+   Sidebar design — two-column layout with a colored sidebar
+   for photo/contact/skills/languages/certifications/mobility,
+   and a white main column for summary/experience/education/
+   projects. Toggled via the toolbar buttons in cv.html.
+   ========================================================= */
+
+.design-sidebar {
+  --sidebar-bg: #16332e;
+  --sidebar-accent: #8fc3b2;
+  --sidebar-text: #f2f6f4;
+  --sidebar-text-soft: rgba(242, 246, 244, 0.78);
+  --sidebar-text-faint: rgba(242, 246, 244, 0.5);
+}
+
+.cv-two-col {
+  display: grid;
+  grid-template-columns: 34% 1fr;
+  align-items: start;
+  margin: calc(-1 * var(--page-margin-v)) calc(-1 * var(--page-margin-h));
+}
+
+.cv-sidebar {
+  background: var(--sidebar-bg);
+  color: var(--sidebar-text);
+  min-height: 100%;
+  padding: var(--page-margin-v) 18px var(--page-margin-v) var(--page-margin-h);
+}
+
+.cv-main {
+  padding: var(--page-margin-v) var(--page-margin-h) var(--page-margin-v) 24px;
+}
+
+.side-photo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.side-photo img {
+  width: 108px;
+  height: 108px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  border: 3px solid rgba(255, 255, 255, 0.22);
+}
+
+.side-identity {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.side-identity h1 {
+  font-family: var(--font-display);
+  font-size: 21px;
+  font-weight: 500;
+  color: #ffffff;
+  margin: 0 0 3px 0;
+}
+
+.side-identity .role {
+  font-family: var(--font-body);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--sidebar-accent);
+  margin: 0;
+}
+
+.side-contact {
+  text-align: center;
+  font-size: 11.5px;
+  line-height: 1.85;
+  color: var(--sidebar-text-soft);
+  padding-bottom: 18px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+  word-break: break-word;
+}
+
+.side-contact a {
+  color: var(--sidebar-text-soft);
+  text-decoration: none;
+}
+
+.cv-sidebar section.block {
+  margin-bottom: 20px;
+}
+
+.cv-sidebar .section-label {
+  color: #ffffff;
+  font-size: 10.5px;
+}
+
+.cv-sidebar .section-label::after {
+  background: var(--sidebar-accent);
+}
+
+.cv-sidebar .skills-grid .cat-name {
+  color: #ffffff;
+}
+
+.cv-sidebar .skills-grid .cat-items {
+  color: var(--sidebar-text-soft);
+}
+
+.cv-sidebar .skills-grid {
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.cv-sidebar .languages-row,
+.cv-sidebar .certifications-row,
+.cv-sidebar .mobility-row {
+  flex-direction: column;
+  gap: 5px;
+  color: var(--sidebar-text-soft);
+}
+
+.cv-sidebar .lang-level,
+.cv-sidebar .cert-meta {
+  color: var(--sidebar-text-faint);
+}
+
+.cv-main .summary {
+  margin-bottom: 24px;
+}
+
 @media print {
   .entry {
     break-inside: avoid;
@@ -190,6 +321,12 @@ section.block:last-child {
   section.block.compact {
     break-inside: avoid;
   }
+  .cv-sidebar {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
 }
+
+
 
 
