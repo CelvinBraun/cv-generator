@@ -1,6 +1,8 @@
 const APP_CONFIG = {
   lang: "ja", // picks data/base.ja.js and switches section headings/dates to Japanese
 
+  design: "classic", // "classic" or "sidebar" — see cv.html toolbar buttons
+
   company: "サンプル株式会社",
   position: "シニアバックエンドエンジニア",
   date: "2026-08-30",
@@ -15,6 +17,7 @@ const APP_CONFIG = {
     skills: "all",
     projects: "all",
     languages: "all",
-    certifications: "all"
+    certifications: "all",
+    mobility: "all"
   }
 };
