@@ -14,6 +14,7 @@ const BASE_DATA = {
     phone: "+1 555 123 4567",
     location: "Berlin, Germany",
     photo: null,
+    birthDate: "1994-05-12",
     links: [
       { label: "LinkedIn", url: "https://linkedin.com/in/janedoe" },
       { label: "GitHub", url: "https://github.com/janedoe" },
@@ -103,5 +104,10 @@ const BASE_DATA = {
       issuer: "Amazon Web Services",
       date: "2023"
     }
+  ],
+
+  mobility: [
+    { id: "license", text: "Driving license (Class B)" },
+    { id: "car", text: "Own car available" }
   ]
 };
